@@ -20,7 +20,7 @@ public class DatabaseIntro {
         try {
             // Set up connection to database
             Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/bookshop? " +
+                    "jdbc:mysql://localhost:3306/fredag? " +
                             "allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
                     "calle", password);
 
