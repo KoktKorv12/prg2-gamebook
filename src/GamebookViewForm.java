@@ -7,9 +7,19 @@ public class GamebookViewForm extends JFrame {
     private JTextArea textArea1;
     private JButton button1;
     private JButton button2;
+    private JPanel mainPanel;
 
-    GamebookViewForm(){
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("GamebookViewForm");
+        frame.setContentPane(new GamebookViewForm().mainPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
 
+    public GamebookViewForm(){
+        Story s = new Story(1);
+        setStory(s);
     }
 
     public void choices(Story story){
@@ -34,7 +44,7 @@ public class GamebookViewForm extends JFrame {
         this.disableButton();
 
         this.textArea1.setText(story.getText());
-        this.choices(story);
+        //this.choices(story);
     }
 
     public Story getStory(){

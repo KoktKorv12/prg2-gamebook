@@ -1,15 +1,17 @@
-/*
+
 import javax.swing.*;
 import java.sql.*;
 import java.util.Scanner;
 
-*/
+
+import javax.swing.*;
+
 /**
  * This is a class
  * Created 2020-11-24
  *
  * @author Magnus Silverdal
- *//*
+ */
 
 public class DatabaseIntro {
     public static void main(String[] args) {
@@ -66,4 +68,4 @@ public class DatabaseIntro {
             ex.printStackTrace();
         }
     }
-}*/
+}
