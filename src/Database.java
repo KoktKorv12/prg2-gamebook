@@ -21,8 +21,8 @@ public class Database {
 
     }
 
-    public user[] dbShow() throws SQLException{
-        user users[] = new user[10];
+    public User[] dbShow() throws SQLException{
+        User users[] = new User[10];
 
         Connection conn = null;
         Statement stmt;
@@ -38,7 +38,7 @@ public class Database {
         ResultSet rset = stmt.executeQuery(get);
 
         for (int i = 0; rset.next(); i++){
-            users[i] = new user(rset.getString("name"), rset.getInt("score"));
+            users[i] = new User(rset.getString("name"), rset.getInt("score"));
         }
 
         return users;
