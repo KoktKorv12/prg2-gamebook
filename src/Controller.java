@@ -1,5 +1,4 @@
 import javafx.scene.control.TableView;
-
 import javax.swing.*;
 import javax.swing.text.View;
 import java.awt.event.ActionEvent;
@@ -18,33 +17,33 @@ public class Controller {
         timer = new Timer();
         running = true;
         database = new Database();
-        ViewModel.ExitButton(new exit());
-        ViewModel.topscore(new score());
+        viewmodel.ExitButton(new exit());
+        viewmodel.topscore(new score());
         update();
     }
     public void update(){
         while (running){
-            ViewModel.setTime(counter.time());
+            viewmodel.setTime(timer.time());
         }
     }
     private class exit implements ActionListener{
         public void actionPerformed(ActionEvent e){
             running = false;
             try {
-                database.dbStore(JOptionPane.showInputDialog(null, "Type in your initials"), Integer.parseInt(view.getTime()));
+                database.dbStore(JOptionPane.showInputDialog(null, "Type in your initials"), Integer.parseInt(viewmodel.getTime()));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-            ViewModel.dispose();
+            viewmodel.dispose();
         }
     }
 
     private class score implements ActionListener{
         public void actionPerformed(ActionEvent e){
             try {
-                ViewModel.scoreboard(database.dbShow());
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                viewmodel.scoreboard(database.dbShow());
+            } catch (SQLException throwable) {
+                throwable.printStackTrace();
             }
         }
     }
